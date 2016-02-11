@@ -1,10 +1,6 @@
 // Description
-//   Example conversations.
+//   Computers can talk back!
 // 
-// Commands:
-//   !parking - Lists the available parking at UQ
-// 
-
 
 var Conversation = require('hubot-conversation');
 module.exports = function (robot) {
@@ -12,7 +8,7 @@ module.exports = function (robot) {
     var switchBoard = new Conversation(robot);
 
     robot.respond(/what is love?/, function (msg) {
-        var dialog = switchBoard.startDialog(msg);
+        var dialog = switchBoard.startDialog(msg, 5000);
         msg.reply('Baby don\'t hurt me');
         
         dialog.timeout = function (msg2) {
